@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Quadruped</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <table class="table w-auto">
+                        <thead>
+                            <tr>
+                                <td>&#9712;</td>
+                                <td><small>joint</small></td>
+                                <td><small>volt</small></td>
+                                <td><small>temp</small></td>
+                                <td><small>pos</small></td>
+                                <td><small>settings</small></td>
+                            </tr>
+                        </thead>
+                        <tbody id="leg_4_table"></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="x-data-4" placeholder="X" value="150">
+                            <input type="text" class="form-control" id="y-data-4" placeholder="Y" value="150">
+                            <input type="text" class="form-control" id="z-data-4" placeholder="Z" value="50">
+                            <button onclick="setPos(4)"><i class='fas fa-share'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <table class="table w-auto">
+                        <thead>
+                            <tr>
+                                <td>&#9715;</td>
+                                <td><small>joint</small></td>
+                                <td><small>volt</small></td>
+                                <td><small>temp</small></td>
+                                <td><small>pos</small></td>
+                                <td><small>settings</small></td>
+                            </tr>
+                        </thead>
+                        <tbody id="leg_1_table"></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="x-data-1" placeholder="X" value="150">
+                            <input type="text" class="form-control" id="y-data-1" placeholder="Y" value="150">
+                            <input type="text" class="form-control" id="z-data-1" placeholder="Z" value="50">
+                            <button onclick="setPos(1)"><i class='fas fa-share'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <table class="table w-auto">
+                        <thead>
+                            <tr>
+                                <td>&#9713;</td>
+                                <td><small>joint</small></td>
+                                <td><small>volt</small></td>
+                                <td><small>temp</small></td>
+                                <td><small>pos</small></td>
+                                <td><small>settings</small></td>
+                            </tr>
+                        </thead>
+                        <tbody id="leg_3_table"></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="x-data-3" placeholder="X" value="150">
+                            <input type="text" class="form-control" id="y-data-3" placeholder="Y" value="150">
+                            <input type="text" class="form-control" id="z-data-3" placeholder="Z" value="50">
+                            <button onclick="setPos(3)"><i class='fas fa-share'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <table class="table w-auto">
+                        <thead>
+                            <tr>
+                                <td>&#9714;</td>
+                                <td><small>joint</small></td>
+                                <td><small>volt</small></td>
+                                <td><small>temp</small></td>
+                                <td><small>pos</small></td>
+                                <td><small>settings</small></td>
+                            </tr>
+                        </thead>
+                        <tbody id="leg_2_table"></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="x-data-2" placeholder="X" value="150">
+                            <input type="text" class="form-control" id="y-data-2" placeholder="Y" value="150">
+                            <input type="text" class="form-control" id="z-data-2" placeholder="Z" value="50">
+                            <button onclick="setPos(2)"><i class='fas fa-share'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="configWindow" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal Header</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row" style="margin: 10px;">
+                                <div class="col"><label>Minimum Position Limit:</label></div>
+                                <div class="col" id="config_min_pos"></div>
+                            </div>
+                            <div class="row" style="margin: 10px;">
+                                <div class="col"><label>Maximum Position Limit:</label></div>
+                                <div class="col" id="config_max_pos"></div>
+                            </div>
+                            <div class="row" style="margin: 10px;">
+                                <div class="col"><label>Current Position:</label></div>
+                                <div class="col" id="current_pos"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" id="save_button" class="btn btn-default"
+                            data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END of MODAL-->
+
+        <!--LEFT AND RIGHT CONTROLLERS-->
+        <div class="row text-center">
+
+            <div class="col-sm-3">
+                <div id="left-controller"></div>
+            </div>
+            <div class="col-sm-3">
+                <table class="table table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th># Item</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Event</td>
+                            <td id="l-event"></td>
+                        </tr>
+                        <tr>
+                            <td>Dist</td>
+                            <td id="l-distance"></td>
+                        </tr>
+                        <tr>
+                            <td>Degree</td>
+                            <td id="l-angle-deg"></td>
+                        </tr>
+                        <tr>
+                            <td>Direction</td>
+                            <td id="l-direction"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-sm-3">
+                <table class="table table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th># Item</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Event</td>
+                            <td id="r-event"></td>
+                        </tr>
+                        <tr>
+                            <td>Dist</td>
+                            <td id="r-distance"></td>
+                        </tr>
+                        <tr>
+                            <td>Degree</td>
+                            <td id="r-angle-deg"></td>
+                        </tr>
+                        <tr>
+                            <td>Direction</td>
+                            <td id="r-direction"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-3">
+                <div id="right-controller"></div>
+            </div>
+        </div>
+        <script src="js/nipplejs.js"></script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>

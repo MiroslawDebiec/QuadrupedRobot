@@ -1,0 +1,98 @@
+[
+    {
+        "id": "1",
+        "leg": "1",
+        "joint": "1",
+        "joint_name" : "coxa",
+        "max_position": "195.75",
+        "min_position": "108.75"
+    },
+    {
+        "id": "2",
+        "leg": "2",
+        "joint": "1",
+        "joint_name" : "coxa",
+        "max_position": "195.75",
+        "min_position": "108.75"
+    },
+    {
+        "id": "3",
+        "leg": "3",
+        "joint": "1",
+        "joint_name" : "coxa",
+        "max_position": "195.75",
+        "min_position": "108.75"
+    },
+    {
+        "id": "4",
+        "leg": "4",
+        "joint": "1",
+        "joint_name" : "coxa",
+        "max_position": "195.75",
+        "min_position": "108.75"
+    },
+    {
+        "id": "5",
+        "leg": "1",
+        "joint": "2",
+        "joint_name" : "femur",
+        "max_position": "203.00",
+        "min_position": "43.50"
+    },
+    {
+        "id": "6",
+        "leg": "2",
+        "joint": "2",
+        "joint_name" : "femur",
+        "max_position": "203.00",
+        "min_position": "43.50"
+    },
+    {
+        "id": "7",
+        "leg": "3",
+        "joint": "2",
+        "joint_name" : "femur",
+        "max_position": "203.00",
+        "min_position": "43.50"
+    },
+    {
+        "id": "8",
+        "leg": "4",
+        "joint": "2",
+        "joint_name" : "femur",
+        "max_position": "203.00",
+        "min_position": "43.50"
+    },
+    {
+        "id": "9",
+        "leg": "1",
+        "joint": "3",
+        "joint_name" : "tibia",
+        "max_position": "232.00",
+        "min_position": "101.50"
+    },
+    {
+        "id": "10",
+        "leg": "2",
+        "joint": "3",
+        "joint_name" : "tibia",
+        "max_position": "232.00",
+        "min_position": "101.50"
+    },
+    {
+        "id": "11",
+        "leg": "3",
+        "joint": "3",
+        "joint_name" : "tibia",
+        "max_position": "232.00",
+        "min_position": "101.50"
+    },
+    {
+        "id": "12",
+        "leg": "4",
+        "joint": "3",
+        "joint_name" : "tibia",
+        "max_position": "232.00",
+        "min_position": "101.50"
+    }
+]
